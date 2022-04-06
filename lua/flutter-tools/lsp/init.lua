@@ -192,6 +192,7 @@ function M.attach()
   local existing_client = get_dartls_client(config.name)
   if existing_client then
     lsp.buf_attach_client(bufnr, existing_client.id)
+    conf.on_attach(bufnr)
     return true
   end
 
